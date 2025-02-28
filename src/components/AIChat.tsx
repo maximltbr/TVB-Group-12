@@ -63,14 +63,14 @@ const AIChat: React.FC = () => {
   };
 
   const generateMockResponse = (query: string): string => {
-    if (query.toLowerCase().includes('tesla')) {
-      return "Tesla's stock has shown increased volatility in the past week with a 3.2% gain overall. Recent sentiment analysis indicates a positive bias due to production numbers exceeding expectations in Asia. Institutional investors have increased their positions by 1.7% this month. The most significant recent news involves their energy division's new contracts, which analysts project could increase revenue by 4% next quarter.";
-    } else if (query.toLowerCase().includes('fed') || query.toLowerCase().includes('interest rates')) {
-      return "The Federal Reserve's recent signals suggest a cautious approach to rate changes in the coming quarter. Market analysts are pricing in a 67% probability of a rate hold at the next meeting, with futures indicating increased confidence in a potential 25 basis point cut in Q3. The yield curve has flattened slightly, with the 10-year Treasury yield decreasing 7 basis points this week in response to inflation numbers coming in below expectations at 2.8% annually.";
-    } else if (query.toLowerCase().includes('crypto') || query.toLowerCase().includes('bitcoin')) {
-      return "The cryptocurrency market is seeing renewed institutional interest this month. Bitcoin's on-chain metrics show accumulation by large holders, while exchange outflows have increased 12% week-over-week. Recent regulatory developments in Asia appear favorable, with Singapore announcing a streamlined framework for digital asset providers. Technical analysis suggests strong support at the $42,000 level, with declining volatility measurements indicating a potential price consolidation phase.";
+    if (query.toLowerCase().includes('tech') || query.toLowerCase().includes('technology')) {
+      return "The tech industry is seeing significant changes this month. Job growth in AI and machine learning roles has increased by 24%, while traditional IT positions have declined slightly. Several major companies have announced new product launches for Q3, with a particular focus on sustainable technology and improved privacy features. Venture capital funding has increased by 15% compared to last quarter, primarily in healthcare tech, clean energy, and cybersecurity startups.";
+    } else if (query.toLowerCase().includes('climate') || query.toLowerCase().includes('environment')) {
+      return "Recent climate initiatives have gained momentum across both public and private sectors. New policies introduced in the EU aim to reduce carbon emissions by 55% by 2030. Corporate sustainability pledges have increased by 38% this year, with more companies setting science-based targets. The renewable energy sector has seen 15% growth in employment, while green technology patents have increased by 22% year-over-year. Community-level programs focused on resilience and adaptation have expanded to over 250 cities worldwide.";
+    } else if (query.toLowerCase().includes('health') || query.toLowerCase().includes('healthcare')) {
+      return "The healthcare landscape continues to evolve with telemedicine usage remaining 300% above pre-pandemic levels. Mental health services have expanded significantly, with a 45% increase in digital platform offerings. Recent research breakthroughs in Alzheimer's treatment show promising results in early clinical trials. Preventative care programs have gained increased insurance coverage, and personalized medicine approaches based on genetic testing have become more accessible with costs decreasing by 30% over the past year.";
     } else {
-      return "Based on the latest market data, we're seeing mixed signals across major indices. The S&P 500 is up 0.4% this week, with technology and healthcare leading the gains. Trading volumes are 8% above monthly averages, and the CBOE Volatility Index has decreased 2 points to 17, indicating reduced market uncertainty. Recent earnings reports have generally exceeded expectations, with 73% of companies beating estimates. Analyst consensus suggests cautious optimism for Q3, with projected growth rates of 4.2% year-over-year.";
+      return "Based on recent trends, we're seeing increased interest in personalized content and experiences across digital platforms. User engagement with interactive content has risen by 34%, while traditional passive consumption has declined slightly. Privacy concerns continue to shape user behavior, with 65% of consumers indicating they're more selective about sharing personal data. Cross-platform integration and seamless experiences between devices remain top priorities for users, with 72% reporting they regularly use three or more connected devices throughout their day.";
     }
   };
 
@@ -119,7 +119,7 @@ const AIChat: React.FC = () => {
                 <div className="p-4 border-b flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="bg-primary rounded-full h-2 w-2 animate-pulse"></span>
-                    <h3 className="font-medium">Market Insights AI</h3>
+                    <h3 className="font-medium">AI Assistant</h3>
                   </div>
                   
                   <div className="flex items-center gap-2">
@@ -189,7 +189,7 @@ const AIChat: React.FC = () => {
                       <div className="glass-panel rounded-xl rounded-tl-none p-3">
                         <div className="flex items-center gap-2">
                           <Loader2 size={16} className="animate-spin" />
-                          <span className="text-sm">Analyzing market data...</span>
+                          <span className="text-sm">Analyzing your request...</span>
                         </div>
                       </div>
                     </motion.div>
@@ -210,7 +210,7 @@ const AIChat: React.FC = () => {
                     <Input
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
-                      placeholder="Ask about market insights..."
+                      placeholder="Ask me anything..."
                       className="glass-input"
                       disabled={isLoading}
                     />

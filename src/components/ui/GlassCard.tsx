@@ -1,9 +1,9 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-interface GlassCardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface GlassCardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag'> {
   children: React.ReactNode;
   animate?: boolean;
   className?: string;
@@ -27,7 +27,7 @@ const GlassCard: React.FC<GlassCardProps> = ({
         'rounded-xl backdrop-blur-md bg-white/60 dark:bg-slate-900/50 border border-white/20 dark:border-slate-800/50 shadow-xl',
         className
       )}
-      {...props}
+      {...props as any}
     >
       {children}
     </motion.div>

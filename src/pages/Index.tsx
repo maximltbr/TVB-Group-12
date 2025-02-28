@@ -112,8 +112,8 @@ const Index = () => {
                     className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
                   >
                     <div>
-                      <h1 className="text-3xl font-semibold tracking-tight">Financial Pulse</h1>
-                      <p className="text-muted-foreground mt-1">Your real-time financial alert system</p>
+                      <h1 className="text-3xl font-semibold tracking-tight">Pulse</h1>
+                      <p className="text-muted-foreground mt-1">Your personalized alert system</p>
                     </div>
                     <Button onClick={() => setCurrentView('create-alert')} className="sm:w-auto w-full">
                       <Plus size={16} className="mr-2" /> Create Alert
@@ -185,7 +185,7 @@ const Index = () => {
                   >
                     <GlassCard className="p-4">
                       <div className="flex items-center justify-between mb-3">
-                        <h3 className="font-medium">Market Overview</h3>
+                        <h3 className="font-medium">Trending Topics</h3>
                         <Button 
                           variant="ghost" 
                           size="icon" 
@@ -197,25 +197,25 @@ const Index = () => {
                       
                       <Tabs defaultValue="gainers">
                         <TabsList className="w-full">
-                          <TabsTrigger value="gainers" className="text-xs">Top Gainers</TabsTrigger>
-                          <TabsTrigger value="losers" className="text-xs">Top Losers</TabsTrigger>
+                          <TabsTrigger value="gainers" className="text-xs">Growing Topics</TabsTrigger>
+                          <TabsTrigger value="losers" className="text-xs">Declining Topics</TabsTrigger>
                         </TabsList>
                         
                         <TabsContent value="gainers">
                           <div className="space-y-2 mt-2">
-                            {marketSummary.topGainers.map((stock) => (
-                              <div key={stock.symbol} className="flex items-center justify-between py-1">
+                            {marketSummary.topGainers.map((topic) => (
+                              <div key={topic.symbol} className="flex items-center justify-between py-1">
                                 <div className="flex items-center gap-2">
                                   <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-xs font-semibold text-primary">
-                                    {stock.symbol.substring(0, 2)}
+                                    {topic.symbol.substring(0, 2)}
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium">{stock.name}</p>
-                                    <p className="text-xs text-muted-foreground">{stock.symbol}</p>
+                                    <p className="text-sm font-medium">{topic.name}</p>
+                                    <p className="text-xs text-muted-foreground">Interest growth</p>
                                   </div>
                                 </div>
                                 <Badge className="bg-green-50 text-green-600 border-green-200">
-                                  {stock.change}
+                                  {topic.change}
                                 </Badge>
                               </div>
                             ))}
@@ -224,19 +224,19 @@ const Index = () => {
                         
                         <TabsContent value="losers">
                           <div className="space-y-2 mt-2">
-                            {marketSummary.topLosers.map((stock) => (
-                              <div key={stock.symbol} className="flex items-center justify-between py-1">
+                            {marketSummary.topLosers.map((topic) => (
+                              <div key={topic.symbol} className="flex items-center justify-between py-1">
                                 <div className="flex items-center gap-2">
                                   <div className="w-8 h-8 bg-red-50 rounded-full flex items-center justify-center text-xs font-semibold text-red-500">
-                                    {stock.symbol.substring(0, 2)}
+                                    {topic.symbol.substring(0, 2)}
                                   </div>
                                   <div>
-                                    <p className="text-sm font-medium">{stock.name}</p>
-                                    <p className="text-xs text-muted-foreground">{stock.symbol}</p>
+                                    <p className="text-sm font-medium">{topic.name}</p>
+                                    <p className="text-xs text-muted-foreground">Interest decline</p>
                                   </div>
                                 </div>
                                 <Badge variant="destructive" className="bg-red-50 border-red-200">
-                                  {stock.change}
+                                  {topic.change}
                                 </Badge>
                               </div>
                             ))}

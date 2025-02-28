@@ -4,15 +4,15 @@ import { Alert, ChatMessage, UserSettings } from './types';
 export const mockAlerts: Alert[] = [
   {
     id: '1',
-    name: 'Apple Stock Alerts',
-    description: 'Track negative news about Apple',
+    name: 'Tech Industry News',
+    description: 'Track news about technology companies',
     createdAt: '2023-05-15T10:30:00Z',
     rules: [
       {
         id: '101',
-        type: 'stock',
-        condition: 'News with negative sentiment',
-        symbol: 'AAPL',
+        type: 'news',
+        condition: 'News with specific sentiment',
+        keywords: ['AI', 'machine learning', 'tech layoffs'],
         sentiment: 'negative',
         frequency: 'instant',
       }
@@ -26,15 +26,15 @@ export const mockAlerts: Alert[] = [
   },
   {
     id: '2',
-    name: 'Crypto Regulation',
-    description: 'Updates on cryptocurrency regulations in EU',
+    name: 'Climate Change Updates',
+    description: 'Stay informed about climate policy changes',
     createdAt: '2023-05-20T14:20:00Z',
     rules: [
       {
         id: '201',
-        type: 'crypto',
-        condition: 'News about regulations',
-        keywords: ['regulation', 'EU', 'compliance', 'law'],
+        type: 'news',
+        condition: 'Keyword mentions',
+        keywords: ['climate change', 'carbon emissions', 'renewable energy'],
         frequency: 'daily',
       }
     ],
@@ -47,15 +47,15 @@ export const mockAlerts: Alert[] = [
   },
   {
     id: '3',
-    name: 'Banking Sector Summary',
-    description: 'Weekly summary of banking sector updates',
+    name: 'Health & Wellness Trends',
+    description: 'Weekly summary of health news and research',
     createdAt: '2023-06-01T09:15:00Z',
     rules: [
       {
         id: '301',
-        type: 'sector',
-        condition: 'Major shifts in banking sector',
-        keywords: ['banking', 'finance', 'banks'],
+        type: 'news',
+        condition: 'Keyword mentions',
+        keywords: ['health research', 'wellness', 'mental health'],
         frequency: 'weekly',
       }
     ],
@@ -68,16 +68,16 @@ export const mockAlerts: Alert[] = [
   },
   {
     id: '4',
-    name: 'Tesla Price Movements',
-    description: 'Significant price changes for Tesla stock',
+    name: 'Social Media Activity',
+    description: 'Track significant engagement on your content',
     createdAt: '2023-06-05T16:45:00Z',
     rules: [
       {
         id: '401',
         type: 'stock',
-        condition: 'Price change threshold',
-        symbol: 'TSLA',
-        threshold: 5,
+        condition: 'Volume spike',
+        symbol: 'SOCIAL',
+        threshold: 50,
         frequency: 'instant',
       }
     ],
@@ -93,26 +93,26 @@ export const mockAlerts: Alert[] = [
 export const mockChatHistory: ChatMessage[] = [
   {
     id: '1',
-    content: 'What\'s the latest sentiment on Tesla?',
+    content: 'What\'s happening with the latest tech layoffs?',
     sender: 'user',
     timestamp: '2023-06-10T09:30:00Z',
   },
   {
     id: '2',
-    content: 'Recent sentiment analysis shows Tesla has a moderately positive outlook. The company\'s Q2 earnings exceeded expectations, leading to a 3% stock price increase. Investors remain cautiously optimistic about production targets, though supply chain concerns persist. Media coverage has been 65% positive, focusing on innovation and expansion plans.',
+    content: 'Recent reports show that tech layoffs have slowed by 35% compared to last quarter. Major companies like Google and Microsoft have announced they\'re resuming hiring in AI divisions while maintaining hiring freezes in other departments. Startups are still facing funding challenges, but the overall sentiment in the industry has improved with new job openings up 12% month-over-month.',
     sender: 'assistant',
     timestamp: '2023-06-10T09:30:10Z',
     model: 'gpt',
   },
   {
     id: '3',
-    content: 'How did the Fed\'s announcement impact the S&P 500?',
+    content: 'How is the new climate bill affecting renewable energy adoption?',
     sender: 'user',
     timestamp: '2023-06-10T09:32:00Z',
   },
   {
     id: '4',
-    content: 'The Fed\'s recent decision to maintain current interest rates caused an immediate 0.7% rally in the S&P 500, with financial sector stocks showing the strongest gains at 1.2%. Trading volume was 15% above average. Market volatility, as measured by the VIX, decreased by 3 points, indicating reduced investor uncertainty. Analysts project continued market stability if inflation data remains within targeted ranges.',
+    content: 'The new climate legislation has accelerated renewable energy adoption, with solar installations up 28% and wind projects increasing by 15%. Tax incentives have made these technologies more affordable for consumers and businesses alike. The bill has also sparked a 40% increase in green energy job postings across the country, particularly in manufacturing and installation sectors. Analysts project this growth trend will continue for at least the next 3-5 years.',
     sender: 'assistant',
     timestamp: '2023-06-10T09:32:15Z',
     model: 'gpt',
@@ -134,29 +134,29 @@ export const mockUserSettings: UserSettings = {
 export const recentNewsHeadlines = [
   {
     id: '1',
-    title: 'Fed Signals Potential Rate Cut in Coming Months',
-    source: 'Financial Times',
+    title: 'New Study Shows Benefits of Hybrid Work Models',
+    source: 'Business Insider',
     timestamp: '2 hours ago',
     sentiment: 'positive',
   },
   {
     id: '2',
-    title: 'Tech Giants Face New Antitrust Scrutiny',
-    source: 'Wall Street Journal',
+    title: 'Major Data Breach Affects Millions of Users',
+    source: 'Tech Chronicle',
     timestamp: '4 hours ago',
     sentiment: 'negative',
   },
   {
     id: '3',
-    title: 'Oil Prices Stabilize After OPEC+ Agreement',
-    source: 'Bloomberg',
+    title: 'Global Summit on Climate Change Concludes',
+    source: 'Environmental Today',
     timestamp: '6 hours ago',
     sentiment: 'neutral',
   },
   {
     id: '4',
-    title: 'European Markets Rally on Strong Economic Data',
-    source: 'Reuters',
+    title: 'New Breakthrough in Cancer Research Announced',
+    source: 'Health Journal',
     timestamp: '8 hours ago',
     sentiment: 'positive',
   },
@@ -164,19 +164,19 @@ export const recentNewsHeadlines = [
 
 export const marketSummary = {
   indices: [
-    { name: 'S&P 500', value: '4,587.32', change: '+0.53%', direction: 'up' },
-    { name: 'NASDAQ', value: '14,328.75', change: '+0.78%', direction: 'up' },
-    { name: 'DOW', value: '36,124.56', change: '+0.32%', direction: 'up' },
-    { name: 'FTSE 100', value: '7,492.83', change: '-0.21%', direction: 'down' },
+    { name: 'Trending News', value: '128 stories', change: '+12% today', direction: 'up' },
+    { name: 'Your Posts', value: '24 engagements', change: '+8% today', direction: 'up' },
+    { name: 'Notifications', value: '17 new', change: '-3% today', direction: 'down' },
+    { name: 'Messages', value: '5 unread', change: '+2 today', direction: 'up' },
   ],
   topGainers: [
-    { symbol: 'NVDA', name: 'NVIDIA', change: '+3.2%' },
-    { symbol: 'AMZN', name: 'Amazon', change: '+2.8%' },
-    { symbol: 'MSFT', name: 'Microsoft', change: '+1.9%' },
+    { symbol: 'TECH', name: 'Technology', change: '+28%' },
+    { symbol: 'HLTH', name: 'Healthcare', change: '+15%' },
+    { symbol: 'EDU', name: 'Education', change: '+10%' },
   ],
   topLosers: [
-    { symbol: 'BA', name: 'Boeing', change: '-2.4%' },
-    { symbol: 'DIS', name: 'Disney', change: '-1.7%' },
-    { symbol: 'JPM', name: 'JPMorgan', change: '-1.1%' },
+    { symbol: 'TRSP', name: 'Transportation', change: '-7%' },
+    { symbol: 'RTIL', name: 'Retail', change: '-4%' },
+    { symbol: 'ENT', name: 'Entertainment', change: '-2%' },
   ],
 };

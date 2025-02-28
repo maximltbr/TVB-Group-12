@@ -1,24 +1,24 @@
 
-# Pulse - Financial Alert System
+# Pulse - Personalized Alert System
 
-Pulse is a real-time financial alert system that allows users to create custom triggers for market updates and interact with an AI-powered chatbot for insights. The system aggregates news, applies AI filtering, and delivers alerts via multiple channels.
+Pulse is a real-time alert system that allows users to create custom triggers for news, updates, and personal interests. The system aggregates information, applies AI filtering, and delivers alerts via multiple channels.
 
 ## Features
 
 ### Custom Alert Rules & Triggers
-- Users set personalized rules for financial alerts
+- Users set personalized rules for different types of alerts
 - Example triggers:
-  - "Alert me for Apple stock news only if sentiment is negative."
-  - "Notify me about crypto regulation updates in the EU."
-  - "Send me weekly summaries of major banking sector shifts."
+  - "Alert me about tech industry news with negative sentiment."
+  - "Notify me about climate change policy updates."
+  - "Send me weekly summaries of health and wellness research."
 
-### AI-Powered Chatbot for Market Insights
-- Users can chat with AI for instant market analysis
+### AI-Powered Chatbot for Insights
+- Users can chat with AI for instant analysis and information
 - Model selection: Users can choose between ChatGPT, DeepSeek, or Claude
 - Query examples:
-  - "What's the latest sentiment on Tesla?"
-  - "Summarize today's top financial news."
-  - "How did the Fed's announcement impact the S&P 500?"
+  - "What's the latest on tech layoffs?"
+  - "Summarize recent climate change developments."
+  - "How is the healthcare industry changing this month?"
 
 ### Multi-Channel Alert Delivery
 - Push Notifications
