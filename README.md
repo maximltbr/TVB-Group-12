@@ -1,5 +1,5 @@
 
-# Pulse - Personalized Alert System
+# Tech Venture Bootcamp - Pulse (Group 12)
 
 Pulse is a real-time alert system that allows users to create custom triggers for news, updates, and personal interests. The system aggregates information, applies AI filtering, and delivers alerts via multiple channels.
 
@@ -38,7 +38,3 @@ Pulse is a real-time alert system that allows users to create custom triggers fo
 - Tailwind CSS
 - Framer Motion
 - shadcn/ui
-
-## License
-
-This project is licensed under the MIT License.
